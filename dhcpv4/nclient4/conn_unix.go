@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build go1.12
+// +build darwin linux freebsd openbsd
 
 package nclient4
 
@@ -16,17 +16,13 @@ import (
 	"github.com/u-root/u-root/pkg/uio"
 )
 
-var (
-	// BroadcastMac is the broadcast MAC address.
-	//
-	// Any UDP packet sent to this address is broadcast on the subnet.
-	BroadcastMac = net.HardwareAddr([]byte{255, 255, 255, 255, 255, 255})
-)
+// BroadcastMac is the broadcast MAC address.
+//
+// Any UDP packet sent to this address is broadcast on the subnet.
+var BroadcastMac = net.HardwareAddr{255, 255, 255, 255, 255, 255}
 
-var (
-	// ErrUDPAddrIsRequired is an error used when a passed argument is not of type "*net.UDPAddr".
-	ErrUDPAddrIsRequired = errors.New("must supply UDPAddr")
-)
+// ErrUDPAddrIsRequired is an error used when a passed argument is not of type "*net.UDPAddr".
+var ErrUDPAddrIsRequired = errors.New("must supply UDPAddr")
 
 // NewRawUDPConn returns a UDP connection bound to the interface and port
 // given based on a raw packet socket. All packets are broadcasted.

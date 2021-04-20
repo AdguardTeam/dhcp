@@ -1,3 +1,13 @@
+# DO NOT USE IT
+This fork is only used by [_AdGuard Home_][AGH] to expand its support for
+sending and serving DHCP requests on Unix systems other than Linux.
+
+No issues or PRs are accepted.
+
+Git commit history will be rewritten.
+
+[AGH]: https://github.com/AdguardTeam/AdGuardHome
+
 # dhcp
 [![Build Status](https://travis-ci.org/insomniacslk/dhcp.svg?branch=master)](https://travis-ci.org/insomniacslk/dhcp)
 [![GoDoc](https://godoc.org/github.com/insomniacslk/dhcp?status.svg)](https://godoc.org/github.com/insomniacslk/dhcp)

@@ -14,8 +14,6 @@
 //
 // This file contains code taken from gVisor.
 
-// +build go1.12
-
 package nclient4
 
 import (

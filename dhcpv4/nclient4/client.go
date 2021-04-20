@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build go1.12
-
 // Package nclient4 is a small, minimum-functionality client for DHCPv4.
 //
 // It only supports the 4-way DHCPv4 Discover-Offer-Request-Ack handshake as
@@ -44,14 +42,12 @@ const (
 	ServerPort = 67
 )
 
-var (
-	// DefaultServers is the address of all link-local DHCP servers and
-	// relay agents.
-	DefaultServers = &net.UDPAddr{
-		IP:   net.IPv4bcast,
-		Port: ServerPort,
-	}
-)
+// DefaultServers is the address of all link-local DHCP servers and
+// relay agents.
+var DefaultServers = &net.UDPAddr{
+	IP:   net.IPv4bcast,
+	Port: ServerPort,
+}
 
 var (
 	// ErrNoResponse is returned when no response packet is received.
